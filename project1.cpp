@@ -183,7 +183,7 @@ int main(){
                     if(acc->getAccountID() == id){
                         acc->deposite(amount);
                         found = true;
-                        cout << "==submitted successfuly==" << endl;
+                        cout <<"==Amount credited successfuly==" << endl;
                         break;
                     }
                     }
