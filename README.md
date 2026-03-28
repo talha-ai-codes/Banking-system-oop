@@ -106,8 +106,9 @@ Balance : 1700
 
 ## 👨‍💻 Author
 
-**Muhammad Talha**
--GitHub:  **talha-ai-codes**
+**Muhammad Talha** <br>
+**talha-ai-code**
+
 
 ---
 
