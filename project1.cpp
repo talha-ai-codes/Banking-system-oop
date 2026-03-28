@@ -9,7 +9,7 @@ private:
     int balance;
 public:
     static int totalBalance; //it will store whole balance of bank
-    static int totalAccounts;
+    static int totalAccounts;//it store total accounts in bank
     //setter
     void setName(string name){
         this->name = name;
@@ -51,6 +51,7 @@ public:
         if(amount <= balance){
             balance -= amount;
             totalBalance -= amount;
+            cout << "===withdraw successful===" << endl;
         }else{
             cout << "insuficient balance." << endl;
         }
@@ -203,7 +204,6 @@ int main(){
                     if(acc->getAccountID() == id && amount > 0){
                         acc->withdraw(amount);
                         found = true;
-                        cout << "==withdraw successful==" << endl;
                         break;
                     }
 
@@ -234,7 +234,7 @@ int main(){
                     
                 }
                 if(!found){
-                    cout << "ivalide account ID: " << endl;
+                    cout << "invalide account ID: " << endl;
                 }
             }
                 break;
