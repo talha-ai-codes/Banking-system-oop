@@ -7,10 +7,12 @@ private:
     int accountID;
     int balance;
 public:
+    static int totalbalance;
     Account(string name,int accountID,int balance){
         this->name = name;
         this->accountID = accountID;
         this->balance = balance;
+       
     }
     virtual void calculateInterest(){
         cout << "Base class funvtion to calculate interest." << endl;
@@ -35,7 +37,11 @@ public:
     int getBalance(){
         return balance;
     }
+    virtual void display(){
+        cout << "this function will be override in derived classes..." << endl;
+    }
 };
+    int Account::totalbalance = 0;
 class SavingAccount:public Account{
 private:
     int interestRate;
@@ -45,12 +51,12 @@ public:
     Account(name,accountID,balance){
         this->interestRate = interestRate;
         this->time = time;
+        totalbalance += balance;
     }
     void calculateInterest() override{
         int interest = (getBalance() * interestRate * time)/100;
         setBalance(getBalance() + interest);
-        cout << "total balance with interest: " << getBalance() << endl;
-
+        totalbalance += interest;
     }
     void display(){
         cout << "name : " << getName() << endl;
@@ -68,12 +74,14 @@ public:
     CurrentAccount(string name,int accountID,int balance,int servicecharge)
     :Account(name,accountID,balance){
         this->servicecharge = servicecharge;
+        totalbalance += balance;
     }
     void calculateInterest() override{
         cout << "NO INTEREST FOR CURRENT ACCOUNT" << endl;
         setBalance(getBalance() - servicecharge);
+        totalbalance -= servicecharge;
     }
-    void displayInfo(){
+    void display() override{
         cout << "name : " << getName() << endl;
         cout << "accountID : " << getAccountID() << endl;
         cout << "balance : " << getBalance() << endl;
@@ -82,25 +90,17 @@ public:
 };
 int main(){
     Account *A1;
-    SavingAccount SA("talha",01,1000,5,2.3);
-    CurrentAccount CA("talha",02,2000,200);
-    // A1 = &SA;
-    // A1->calculateInterest();
-    // A1 = &CA;
-    // A1->calculateInterest();
-    // SA.display();
-    // CA.displayInfo();
     vector<Account*> accounts;
     accounts.push_back(new SavingAccount("talha",01,1000,5,2.5));
-    accounts.push_back(new CurrentAccount("ali",02,2000,200));
-    accounts.push_back(new SavingAccount("ahmad",03,3000,6,3.4));
-    accounts.push_back(new CurrentAccount("hamza",04,4000,300));
+    accounts.push_back(new CurrentAccount("ali",02,1000,200));
+    accounts.push_back(new SavingAccount("ahmad",03,1000,6,3.4));
+    accounts.push_back(new CurrentAccount("hamza",04,1000,300));
     for(int i = 0;i < accounts.size();i++){
         accounts[i]->calculateInterest();
-        SA.display();
-        CA.displayInfo();
+        accounts[i]->display();
 
     }
+    cout << "total balance : " << Account::totalbalance << endl;
     for(auto acc:accounts){
         delete acc;
     }
