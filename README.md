@@ -314,7 +314,7 @@ Total balance in Bank: 1300
 
 ## 📁 File Information
 
-* **Main File:** `project2.cpp`
+* **Main File:** `main.cpp`
 * Contains:
 
   * Full OOP Implementation
