@@ -1,3 +1,6 @@
+# TWO PROJECT INCLUDED IN THIS DISCRIPTION
+# 1.PROJECT 1 -> FILE NAME -> project1.cpp
+# 2.PROJECT 2 -> FILE NAME -> main.cpp
 # Banking-system-oop
 # 💰 Banking System (C++ OOP Project)
 
@@ -126,4 +129,226 @@ This project is built for learning purposes to understand:
 ## 🌟 Support
 
 If you like this project, give it a ⭐ on GitHub!
+=========================================================================
+===========================================================================
+============================================================================
+************PROJECT2***************
+**********FILE -> main.cpp ********
+# 🏦 Advanced Banking System (C++ OOP + Exception Handling)
+
+## 📌 Overview
+
+This project is an advanced **Banking System** implemented in C++ using Object-Oriented Programming (OOP) principles and robust Exception Handling.
+
+It simulates a real-world banking environment where multiple types of accounts are managed, transactions are processed, and errors are handled gracefully.
+
+---
+
+## 🚀 Key Features
+
+### 🧾 Account Management
+
+* Create multiple account types:
+
+  * Saving Account
+  * Current Account
+  * Student Account
+* Unique Account ID validation
+* Store accounts dynamically using vectors
+
+---
+
+### 💰 Transactions
+
+* Deposit money with validation
+* Withdraw money with:
+
+  * Balance check
+  * Free transaction limit
+  * Service charges (Current Account)
+  * Withdrawal limit (Student Account)
+
+---
+
+### 📈 Interest & Charges
+
+* Saving Account → Interest calculation
+* Current Account → Service charge deduction
+* Student Account → Higher interest rate + withdrawal limit
+
+---
+
+### 🔍 Account Operations
+
+* Search account by ID
+* Display individual account details
+* Display all accounts
+
+---
+
+### 🏦 Bank Summary
+
+* Total number of accounts
+* Total bank balance (using static members)
+
+---
+
+## ⚠️ Exception Handling
+
+Custom exceptions are implemented for real-world error handling:
+
+* `InvalidAmountException`
+* `InsufficientBalanceException`
+* `DuplicateAccountException`
+* `AccountNotFoundException`
+* `WithdrawLimitExceededException`
+
+All critical operations are protected using `try-catch` blocks.
+
+---
+
+## 🧠 OOP Concepts Used
+
+### ✔ Encapsulation
+
+* Private data members with getters/setters
+
+### ✔ Inheritance
+
+* Base class: `Account`
+* Derived classes:
+
+  * `SavingAccount`
+  * `CurrentAccount`
+  * `StudentAccount`
+
+### ✔ Polymorphism
+
+* Virtual functions (`Withdraw`, `CalculateInterest`, `display`)
+* Runtime binding using base class pointers
+
+### ✔ Abstraction
+
+* Pure virtual functions in base class
+
+---
+
+## 🏗️ Project Structure
+
+```text
+Account (Abstract Base Class)
+   │
+   ├── SavingAccount
+   ├── CurrentAccount
+   └── StudentAccount
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* C++
+* Standard Template Library (STL)
+* Object-Oriented Programming
+* Exception Handling
+
+---
+
+## ▶️ How to Run
+
+1. Compile the program:
+
+```bash
+g++ project2.cpp -o banking
+```
+
+2. Run the executable:
+
+```bash
+./banking
+```
+
+---
+
+## 🖥️ Sample Output
+
+```text
+==enter your choice from the following data:==
+1.Create Account  2.Deposit Amount  3.Withdraw Amount
+4.Apply Interest  5.Search Account  6.Display All
+7.Bank Summary    8.Exit
+
+Enter choice: 1
+Enter Account Type: 1 (Saving)
+Enter Name: Ali
+Enter Account ID: 101
+Enter Balance: 1000
+===ACCOUNT IS CREATED===
+
+Enter choice: 2
+Enter Account ID: 101
+Enter Amount: 500
+500 RS is credited successfully.
+
+Enter choice: 3
+Enter Account ID: 101
+Enter Amount: 200
+200 RS is withdraw successfully.
+
+Enter choice: 7
+===========BANK SUMMARY===========
+Total Accounts in Bank: 1
+Total balance in Bank: 1300
+```
+
+---
+
+## ▶️ How to Use
+
+* Run the program and choose options from the menu
+* Create an account before performing transactions
+* Use Account ID for all operations
+* Invalid operations are handled using exceptions
+
+---
+
+## 📁 File Information
+
+* **Main File:** `project2.cpp`
+* Contains:
+
+  * Full OOP Implementation
+  * Exception Handling
+  * Banking Logic
+
+---
+
+## 💡 Design Highlights
+
+* Real-world inspired banking system
+* Clean OOP architecture
+* Custom exception handling
+* Dynamic memory management using pointers
+
+---
+
+## 📌 Future Improvements
+
+* File handling (data persistence)
+* GUI interface
+* Database integration
+* User authentication system
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Talha**
+GitHub: https://github.com/talha-ai-codes
+
+---
+
+## ⭐ Note
+
+This project is part of my journey to mastering C++, OOP, and building real-world software systems.
 
